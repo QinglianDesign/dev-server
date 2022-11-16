@@ -48,7 +48,6 @@ func data_collection(ctx *gin.Context) {
 			w.Write(v)
 			w.Flush()
 		}
-
 	}()
 
 	ctx.JSON(http.StatusOK, gin.H{
