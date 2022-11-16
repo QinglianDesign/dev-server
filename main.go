@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"dev-server/routes"
 	"errors"
 	"log"
 	"net/http"
@@ -15,10 +16,8 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.GET("/", func(c *gin.Context) {
-		time.Sleep(5 * time.Second)
-		c.String(http.StatusOK, "Welcome Gin Server")
-	})
+
+	routes.Routes(router)
 
 	srv := &http.Server{
 		Addr:    ":4005",
